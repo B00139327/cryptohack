@@ -1,11 +1,11 @@
 def CRT(Congruence_equations):
-#x invoke in a list，keys代表 modulo,items is reminder
+#x invoke in a list，keys means modulo,items is reminder
         def     gcd(a,b):     #gcd
                 while a!=0:
                     a,b = b%a,a  
                 return b
         
-        def     findModReverse(a,m):# Extended Euclidean algorithm to get modulo inversion
+        def     findModReverse(a,m):   # Extended Euclidean algorithm to get modulo inversion
                 if gcd(a,m)!=1:
                     return None
                 u1,u2,u3 = 1,0,a
@@ -20,4 +20,6 @@ def CRT(Congruence_equations):
         x=0
         for p in Congruence_equations.keys():
                 x+=findModReverse(M//p,p)*Congruence_equations[p]*M/p  #CRT
-        return int(x%M)    #
+        return int(x%M)    
+        
+        #return reuslt of conguence eualtion
